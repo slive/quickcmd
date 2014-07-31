@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.3"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.runtime.IAdaptable"
+            id="org.slive.quickcmd.contribution">
+         <action
+         	   definitionId="org.slive.quickcmd.command.QuickCmdAction"
+               label="Quick Cmd"
+               class="org.slive.quickcmd.actions.QuickCmdAction"
+               menubarPath="additions"
+               enablesFor="1"
+               icon="icons/QuickCmd.jpg"
+               id="org.slive.quickcmd.QuickCmdAction">
+         </action>
+      </objectContribution>
+   </extension>
+	<extension
+         point="org.eclipse.ui.commands">
+         <category
+            description="Open cmd window from project or file quickly"
+            id="org.slive.quickcmd.commands.category"
+            name="Quick"/>
+      <!-- Commands -->
+      <command
+      		categoryId="org.slive.quickcmd.commands.category"
+            id="org.slive.quickcmd.command.QuickCmdAction"
+            name="Quick Cmd"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <!-- Keyassist -->
+      <key
+            commandId="org.slive.quickcmd.command.QuickCmdAction"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="Alt+C"/>
+   </extension>
+</plugin>
