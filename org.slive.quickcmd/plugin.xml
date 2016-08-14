@@ -15,6 +15,15 @@
                icon="icons/QuickCmd.jpg"
                id="org.slive.quickcmd.QuickCmdAction">
          </action>
+         <action
+               definitionId="org.slive.quickcmd.command.QuickGitAction"
+               label="Quick Git"
+               class="org.slive.quickcmd.actions.QuickGitAction"
+               menubarPath="additions"
+               enablesFor="1"
+               icon="icons/QuickGit.jpg"
+               id="org.slive.quickcmd.QuickGitAction">
+         </action>
       </objectContribution>
    </extension>
 	<extension
@@ -28,6 +37,11 @@
       		categoryId="org.slive.quickcmd.commands.category"
             id="org.slive.quickcmd.command.QuickCmdAction"
             name="Quick Cmd"/>
+      <!-- Commands -->
+      <command
+            categoryId="org.slive.quickcmd.commands.category"
+            id="org.slive.quickcmd.command.QuickGitAction"
+            name="Quick Git"/>
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
@@ -36,6 +50,11 @@
             commandId="org.slive.quickcmd.command.QuickCmdAction"
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="Alt+C"/>
+            sequence="Alt+M"/>
+      <key
+            commandId="org.slive.quickcmd.command.QuickGitAction"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="Alt+G"/>
    </extension>
 </plugin>
